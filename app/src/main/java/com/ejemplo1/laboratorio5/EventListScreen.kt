@@ -11,12 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.ejemplo1.laboratorio5.ui.theme.Laboratorio5Theme
 
 data class Event(val name: String, val location: String)
 
 @Composable
-fun EventListScreen() {
+fun EventListScreen(navController: NavHostController) {
     val events = listOf(
         Event("Tomorrowland Belgica", "Boom"),
         Event("Tomorrowland Brazil", "Rio de Janeiro"),
@@ -65,10 +66,3 @@ fun EventListItem(event: Event) {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun EventListScreenPreview() {
-    Laboratorio5Theme {
-        EventListScreen()
-    }
-}
